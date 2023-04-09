@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
+
 :root {
-  --dark-1: #1b1c1e;
+  --dark-1: #1a1a1a;
   --dark-2: #1f1f1f;
   --dark-3: #2b2b2b;
   --dark-4: #303030;
+  --dark-5: #3d3d3d;
   --main: #a4b274;
 }
 
@@ -24,7 +27,9 @@ body {
   align-items: center;
   justify-content: center;
 
-  background-color: var(--dark-4);
+  background-color: var(--dark-5);
+
+  font-family: "Work Sans", monospace;
 }
 
 /* Contenedor supremo */
@@ -34,16 +39,16 @@ body {
   justify-content: space-between;
   align-items: center;
 
-  width: 600px;
+  width: clamp(280px, 50%, 600px);
   height: 50px;
 
   padding: 0 12px;
   border-radius: 4px;
 
-  border: 1px solid var(--dark-1);
-  background-color: var(--dark-2);
+  border: 1px solid var(--dark-2);
+  background-color: var(--dark-1);
 
-  box-shadow: 0 0 20px rgb(0 0 0 / 6%);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.261);
 }
 
 /* Contenedor dentro de menu-container que alberga el logo */
@@ -61,6 +66,10 @@ body {
 .menu-logo .logo {
   font-size: 24px;
   color: var(--main);
+}
+
+.menu-logo .logo-text {
+  font-size: 14px;
 }
 
 /* Contenedor dentro del menu-container que alberga los botones */
@@ -107,32 +116,30 @@ body {
   height: 50px;
 }
 
-/* .popover > .btn {
-} */
+.popover > .btn {
+}
 
 /* Menú que contiene las opciones del popovers */
 
 .popover-menu {
   position: absolute;
-  top: calc(100% - 2px);
-  right: -12px;
+  top: calc(100% - 4px);
+  right: -8px;
   z-index: 1;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
 
-  grid-gap: 4px;
+  width: 150px;
 
-  padding: 12px;
-  border-radius: 4px;
-
-  background-color: var(--main);
+  padding: 0px;
 
   /*  */
 
   opacity: 0;
   visibility: hidden;
   transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.222);
 
   transition: 0.3s;
 }
@@ -142,7 +149,7 @@ body {
 
   position: absolute;
   top: -4px;
-  right: 10px;
+  right: 8px;
   z-index: -1;
 
   width: 20px;
@@ -150,20 +157,42 @@ body {
 
   border-radius: 2px;
 
-  background-color: var(--main);
+  background-color: var(--dark-3);
 
   transform: rotate(45deg);
 }
 
 .popover-btn {
-  width: 30px;
-  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 
-  border-radius: 2px;
+  width: 100%;
+
+  padding: 8px 12px;
+
+  font-family: inherit;
+  font-weight: 400;
 
   border: none;
-  background-color: var(--dark-1);
-  color: ghostwhite;
+  background-color: var(--dark-3);
+  color: var(--main);
+}
+
+.popover-btn:first-of-type {
+  border-radius: 4px 4px 0 0;
+}
+.popover-btn:last-of-type {
+  border-radius: 0 0 4px 4px;
+}
+
+.popover-btn:hover {
+  filter: brightness(1.05) contrast(95%);
+  cursor: pointer;
+}
+
+.popover-btn .icon {
+  font-size: 17px;
 }
 
 /* Hover que hace aparecer el popover menu */
