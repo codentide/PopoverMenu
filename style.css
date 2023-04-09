@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600&display=swap");
 
 :root {
-  --dark-1: #1a1a1a;
+  --dark-1: #1b1c1e;
   --dark-2: #1f1f1f;
   --dark-3: #2b2b2b;
   --dark-4: #303030;
@@ -114,9 +114,6 @@ body {
 
   /* El tamaño total del nav */
   height: 50px;
-}
-
-.popover > .btn {
 }
 
 /* Menú que contiene las opciones del popovers */
